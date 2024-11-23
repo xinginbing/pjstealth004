@@ -7,3 +7,6 @@ with Camoufox(geoip=True) as browser:
     random_time = random.randint(35, 50)
     print("Wait " + str(random_time) + " Second！" )
     page.wait_for_timeout(random_time*1000)
+    texts = page.locator('span').all()
+    for t in texts:
+        print(t.inner_text())
