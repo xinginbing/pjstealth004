@@ -16,4 +16,4 @@ jobs:
     - name: Install camoufox
       run: pip install -U camoufox[geoip]
     - name: Run your tests
-      run: xvfb-run python test.py -s -screen 0 1920x1080x16
+      run: xvfb-run python camoufoxtest.py -s -screen 0 1920x1080x16
