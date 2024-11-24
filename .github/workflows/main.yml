@@ -14,9 +14,9 @@ jobs:
         python -m pip install --upgrade pip
     - name: Install patchright
       run: pip install patchright
-	  - name: Install Chromium-Driver for Patchright
+    - name: Install Chromium-Driver for Patchright
       run: patchright install chromium
-	  - name: Install pjstealth
-	    run: pip install pjstealth
+    - name: Install pjstealth
+      run: pip install pjstealth
     - name: Run your tests
       run: xvfb-run python camoufoxtest.py -s -screen 0 1920x1080x16
