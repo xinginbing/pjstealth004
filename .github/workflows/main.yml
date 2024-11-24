@@ -12,7 +12,9 @@ jobs:
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
-    - name: Install camoufox
-      run: pip install -U camoufox[geoip]
+    - name: Install botright
+      run: pip install botright
+	  - name: Install playwright
+      run: playwright install
     - name: Run your tests
       run: xvfb-run python camoufoxtest.py -s -screen 0 1920x1080x16
