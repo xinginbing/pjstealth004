@@ -3,13 +3,13 @@ from browserforge.injectors.playwright import NewContext
 from browserforge.fingerprints import FingerprintGenerator
 import random
 
-fingerprints = FingerprintGenerator()
-fingerprints.generate()
+fingerprint = FingerprintGenerator()
+fingerprint.generate()
 
 with sync_playwright() as playwright:
     browser = playwright.chromium.launch()
     # Create a new context with the injected fingerprint
-    context = NewContext(browser, fingerprint=fingerprints)
+    context = NewContext(browser, fingerprint=fingerprint)
     page = context.new_page()
     page.goto("https://browserscan.net")
     random_time = random.randint(35, 50)
