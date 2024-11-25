@@ -15,7 +15,7 @@ with sync_playwright() as playwright:
     random_time = random.randint(35, 50)
     print("Wait " + str(random_time) + " Second！" )
     page.wait_for_timeout(random_time*1000)
-    texts = await page.locator('span').all()
+    texts = page.locator('span').all()
     for t in texts:
         print(t.inner_text())
     browser.close()
