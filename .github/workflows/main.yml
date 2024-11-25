@@ -12,9 +12,11 @@ jobs:
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
-    - name: Install patchright
-      run: pip install botright
-    - name: Install Chromium-Driver for Patchright
-      run: playwright install
+    - name: Install browserforge
+      run: pip install browserforge
+    - name: update browserforge
+      run: python -m browserforge update
+    - name: Install rebrowser
+      run: pip install rebrowser-playwright
     - name: Run your tests
       run: xvfb-run python camoufoxtest.py -s -screen 0 1920x1080x16
