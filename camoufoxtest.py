@@ -9,7 +9,7 @@ fingerprints.generate()
 with sync_playwright() as playwright:
     browser = playwright.chromium.launch()
     # Create a new context with the injected fingerprint
-    context = NewContext(browser, fingerprint=fingerprint)
+    context = NewContext(browser, fingerprint=fingerprints)
     page = context.new_page()
     page.goto("https://browserscan.net")
     random_time = random.randint(35, 50)
