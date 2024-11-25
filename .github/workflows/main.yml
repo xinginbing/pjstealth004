@@ -16,7 +16,9 @@ jobs:
       run: pip install browserforge
     - name: update browserforge
       run: python -m browserforge update
-    - name: Install rebrowser
-      run: pip install rebrowser-playwright
+    - name: Install playwright
+      run: pip install pytest-playwright
+    - name: Install browser
+      run: playwright install
     - name: Run your tests
       run: xvfb-run python camoufoxtest.py -s -screen 0 1920x1080x16
