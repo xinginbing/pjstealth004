@@ -4,9 +4,7 @@ from camoufox.sync_api import Camoufox
 with Camoufox(
     geoip=True,
     proxy={
-        'server': 'http://138.201.49.224:9999',
-        'username': 'johvtmaf53-res-country-US-hold-session-session-6745bf98384fb',
-        'password': 'aqFltrw2g6FdDk8k'
+        'server': '89.38.98.115:12825'
     }) as browser:
     page = browser.new_page()
     page.goto("https://browserscan.net")
