@@ -4,8 +4,8 @@ from camoufox.sync_api import Camoufox
 with Camoufox(
     geoip=True,
     proxy={
-        'server': 'socks5://136.243.174.185:9999',
-        'username': '4zylzn2nea-res-country-US-state-4896861-city-4556232-hold-hardsession-session-674810e5a43df',
+        'server': 'http://136.243.174.185:9999',
+        'username': '4zylzn2nea-corp.mobile.res-country-RU-state-479119-city-541722-hold-session-session-67481517caddf',
         'password': '0EF1FRQg9N9G3c8G'
     }) as browser:
     page = browser.new_page()
