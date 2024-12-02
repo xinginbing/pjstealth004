@@ -8,7 +8,7 @@ params = {
 	'js_render': 'true',
 	'premium_proxy': 'true',
 	'proxy_country': 'us',
-	'wait': '35000',
+	'wait': '25000',
 	'session_id': '22345',
 }
 response = requests.get('https://api.zenrows.com/v1/', params=params)
