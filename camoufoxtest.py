@@ -27,8 +27,8 @@ while isStop > 0:
     print('Response HTTP Status Code: ', response.status_code)
     print(response.text)
     if int(response.status_code) != 200:
-	    isStop = isStop - 1
-	time.sleep(5)	
+        isStop = isStop - 1
+    time.sleep(5)	
 
 
 
