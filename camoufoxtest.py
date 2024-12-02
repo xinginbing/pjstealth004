@@ -1,3 +1,4 @@
+import time
 import random
 import requests
 
@@ -14,7 +15,7 @@ while isStop > 0:
 
     params = {
         'url': url,
-        'apikey': zenkey，
+        'apikey': zenkey,
         'js_render': 'true',
         'premium_proxy': 'true',
         'proxy_country': geo,
@@ -25,8 +26,9 @@ while isStop > 0:
     print(geo)
     print('Response HTTP Status Code: ', response.status_code)
     print(response.text)
-    if int(response.status_code) != 200:
-        isStop = isStop - 1
+	if int(response.status_code) != 200:
+	    isStop = isStop - 1
+	time.sleep(5)
 
 
 
