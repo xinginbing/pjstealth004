@@ -12,7 +12,7 @@ jobs:
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
-    - name: Install camoufox
-      run: pip install -U camoufox[geoip]
+    - name: Install requests
+      run: pip install requests
     - name: Run your tests
-      run: xvfb-run python camoufoxtest.py -s -screen 0 1920x1080x16
+      run: python camoufoxtest.py
