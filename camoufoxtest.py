@@ -3,7 +3,7 @@ import random
 import requests
 
 isStop = 1
-url = 'https://browserscan.net'
+url = 'https://125700.shop/ecdd30e7e8f019717fb8/2643f1413f/?placementName=default'
 zenkey = '9ff6d18370ad67f79b0193ccf8c9145bc608a3b9'
 
 while isStop > 0:
