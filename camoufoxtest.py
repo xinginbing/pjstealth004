@@ -2,8 +2,8 @@ import time
 import random
 import requests
 
-isStop = 5
-url = 'https://125700.shop/ecdd30e7e8f019717fb8/2643f1413f/?placementName=default'
+isStop = 1
+url = 'https://browserscan.net'
 zenkey = '9ff6d18370ad67f79b0193ccf8c9145bc608a3b9'
 
 while isStop > 0:
@@ -21,13 +21,17 @@ while isStop > 0:
         'proxy_country': geo,
         'wait': waittime,            #最大30000
         'session_id': id,
+        'screenshot_fullpage': 'true',
+		'block_resources': 'none',
     }
     response = requests.get('https://api.zenrows.com/v1/', params=params)
     print(geo)
     print('Response HTTP Status Code: ', response.status_code)
-    if int(response.status_code) != 200:
-        isStop = isStop - 1
-    time.sleep(2)	
+    print(response.text)
+#    if int(response.status_code) != 200:
+#	    isStop = isStop - 1
+#	time.sleep(5)	
+	isStop = isStop - 1	
 
 
 
