@@ -25,7 +25,7 @@ response = client.get(url,
 		{"scroll_y": 100},
 		{"wait": 5000},
 		{"scroll_y": 1000},
-		{"wait": 10000},
+		{"wait": 8000},
 	    ]
 	},
     }
