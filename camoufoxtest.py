@@ -1,38 +1,37 @@
-from scrapingbee import ScrapingBeeClient
-import random
+import requests
+from pprint import pprint
 
 
-url = 'https://luglawhaulsano.net/4/8605030'
-key = 'NP3Q403JMJFWI0VMW1GIHIYY45MM58KJFQCKFFM25XELQSE6EQ2WRHVALN68DBSPDDDQJWK0JG6P2I7O'
-id = str(random.randint(20000, 25000))
+# Structure payload.
+payload = {
+    "source": "universal", 
+    "url": "https://luglawhaulsano.net/4/8605030", 
+    "user_agent_type": "mobile_android",    
+# desktop_chrome   desktop_chrome   desktop_firefox   desktop_opera  desktop_safari  mobile  mobile_android  mobile_ios  tablet   tablet_android  tablet_ios
+    "geo_location": "United States",
+    "render": "html",
+    "context": [
+        {
+            "key": "follow_redirects",
+            "value": true
+        },
+        {
+            "key": "http_method", "value": "get"
+        }]
+    
+}
 
-client = ScrapingBeeClient(api_key=key)
-
-response = client.get(url,
-    params = { 
-        #等待时间 0 到 35000
-        'wait': '35000', 
-        'premium_proxy': 'True',
-        #修改国家
-        'country_code': 'us',
-        #所有使用相同session_id API 请求将通过相同的 IP 地址进行路由，持续时间为5 分钟，id 使用 0 到 10,000,000
-        'session_id': id,
-        #选择将请求发送到服务器的设备类型。只有两个选项可用： desktop （默认）和mobile 。
-        'device': 'mobile',
-        'js_scenario': {
-	    "instructions": [
-		{"scroll_y": 100},
-		{"wait": 5000},
-		{"scroll_y": 1000},
-		{"wait": 8000},
-	    ]
-	},
-    }
-
+# Get response.
+response = requests.request(
+    'POST',
+    'https://realtime.oxylabs.io/v1/queries',
+    auth=('lje024_hTJli', 'xiaobai024A002+'),
+    json=payload,
 )
 
-print('Response HTTP Status Code: ', response.status_code)
-print('Response HTTP Response Body: ', response.content)
+# Instead of response with job status and results url, this will return the
+# JSON response with the result.
+pprint(response.json())
 
 
 
