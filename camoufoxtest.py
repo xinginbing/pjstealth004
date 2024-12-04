@@ -13,7 +13,7 @@ payload = {
     "context": [
         {
             "key": "follow_redirects",
-            "value": "true"
+            "value": True
         },
         {
             "key": "http_method", "value": "get"
