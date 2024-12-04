@@ -1,37 +1,42 @@
-import time
+from scrapingbee import ScrapingBeeClient
+import urllib.parse
 import random
-import requests
 
-isStop = 1
-url = 'https://125700.shop/ecdd30e7e8f019717fb8/2643f1413f/?placementName=default'
-zenkey = '9ff6d18370ad67f79b0193ccf8c9145bc608a3b9'
 
-while isStop > 0:
+url = 'https://t.co/CQDM8aFMYH'
+key = 'NP3Q403JMJFWI0VMW1GIHIYY45MM58KJFQCKFFM25XELQSE6EQ2WRHVALN68DBSPDDDQJWK0JG6P2I7O'
 
-    waittime = str(random.randint(15, 30) * 1000)
-    id = str(random.randint(20000, 25000))
-    countrylist =['nl','sg','us','gb','ca','nl','us','th','ca','my','us','my','gb','nl','fr','th','in','vn','jp','ph','id','us','hk','us','hk','au','my','fr','us','au','nz','hk','us','nz','vn','th','gb','sg','kr','ph','gb','jp','kr','us','ca','sg','sg','it','in','es','id','es','au','gb','us','gb','th','ph','jp','tw','sg','my','gb','sg','es','au','id','jp','jp','tw','jp','au','vn','in','jp','vn','au','jp','sg','sg','ph','ca','jp','jp','id','sg','fr','au','de','it','us','jp','th','us','gb','au','fr','us','nz','jp','my','ca','us','id','ca','de','jp','id','sg','tw','au','kr','gb','ch','au','jp','jp','nl','us','kr','sg','ch','us','nz','th','jp','jp','us','it','tw','it','kr','ca','kr','tw','de','us','nl','ch','nz','my','ph','au','jp','th','ch','my','au','vn','tw','us','nz','jp','in','kr','jp','de','au','tw','de','au','sg','my','sg','au','au','my','nz','in','au','ph','id','sg','ph','jp','ca','sg','nz','kr','it','vn','kr','au','hk','us','my','sg','nl','vn','nz','ca','tw','kr','nl','us','kr','nl','in','ch','au','nl','hk','ch','fr','ch','nl','tw','ca','ch','vn']
-    geo = countrylist[random.randint(0, 209)]
+encoded_url = urllib.parse.quote(url)
 
-    params = {
-        'url': url,
-        'apikey': zenkey,
-        'js_render': 'true',
-        'premium_proxy': 'true',
-        'proxy_country': geo,
-        'wait': waittime,            #最大30000
-        'session_id': id,
-        'screenshot_fullpage': 'true',
-		'block_resources': 'none',
+client = ScrapingBeeClient(api_key=key)
+
+response = client.get(encoded_url,
+    params = { 
+        #等待时间 0 到 35000
+        'wait': '35000', 
+        'premium_proxy': 'True',
+        #修改国家
+        'country_code': 'us',
+        #所有使用相同session_id API 请求将通过相同的 IP 地址进行路由，持续时间为5 分钟，id 使用 0 到 10,000,000
+        'session_id': '1123',
+        #选择将请求发送到服务器的设备类型。只有两个选项可用： desktop （默认）和mobile 。
+        'device': 'mobile',
+        'block_resources': 'False',
+        'js_scenario': {
+	    "instructions": [
+	        {"scroll_y": 100},
+		{"wait": 5000},
+		{"scroll_y": 1000},
+		{"click": 'body'}
+		{"wait": 10000},
+	    ]
+	},
     }
-    response = requests.get('https://api.zenrows.com/v1/', params=params)
-    print(geo)
-    print('Response HTTP Status Code: ', response.status_code)
-    print(response.text)
-#    if int(response.status_code) != 200:
-#	    isStop = isStop - 1
-#	time.sleep(5)	
-    isStop = isStop - 1	
+
+)
+
+print('Response HTTP Status Code: ', response.status_code)
+print('Response HTTP Response Body: ', response.content)
 
 
 
