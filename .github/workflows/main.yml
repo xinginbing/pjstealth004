@@ -12,7 +12,7 @@ jobs:
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
-    - name: Install requests
-      run: pip install requests
+    - name: Install scrapingbee
+      run: pip install scrapingbee
     - name: Run your tests
       run: python camoufoxtest.py
