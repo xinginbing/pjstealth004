@@ -2,7 +2,7 @@ from scrapingbee import ScrapingBeeClient
 import random
 
 
-url = 'https://t.co/CQDM8aFMYH'
+url = 'https://luglawhaulsano.net/4/8605030'
 key = 'NP3Q403JMJFWI0VMW1GIHIYY45MM58KJFQCKFFM25XELQSE6EQ2WRHVALN68DBSPDDDQJWK0JG6P2I7O'
 id = str(random.randint(20000, 25000))
 
