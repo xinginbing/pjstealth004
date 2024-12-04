@@ -1,16 +1,14 @@
 from scrapingbee import ScrapingBeeClient
-import urllib.parse
 import random
 
 
 url = 'https://t.co/CQDM8aFMYH'
 key = 'NP3Q403JMJFWI0VMW1GIHIYY45MM58KJFQCKFFM25XELQSE6EQ2WRHVALN68DBSPDDDQJWK0JG6P2I7O'
 id = str(random.randint(20000, 25000))
-encoded_url = urllib.parse.quote(url)
 
 client = ScrapingBeeClient(api_key=key)
 
-response = client.get(encoded_url,
+response = client.get(url,
     params = { 
         #等待时间 0 到 35000
         'wait': '35000', 
