@@ -19,7 +19,6 @@ response = client.get(url,
         'session_id': id,
         #选择将请求发送到服务器的设备类型。只有两个选项可用： desktop （默认）和mobile 。
         'device': 'mobile',
-        'block_resources': 'False',
         'js_scenario': {
 	    "instructions": [
 		{"scroll_y": 100},
