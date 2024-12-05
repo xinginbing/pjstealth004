@@ -29,11 +29,11 @@ width = "720"
 
 blockResources = "false"
 
-customHeaders = "true"
+forwardHeaders = "true"
 
 payload = {}
 
-url = "http://api.scrape.do?token={}&url={}".format(token, targetUrl, super, geoCode, sessionId, timeout, device, customWait, render, blockResources, customHeaders, height, width)
+url = "http://api.scrape.do?token={}&url={}".format(token, targetUrl, super, geoCode, sessionId, timeout, device, customWait, render, blockResources, forwardHeaders, height, width)
 
 headers = {
   'User-Agent': 'Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.6668.81 Mobile Safari/537.36',
