@@ -29,15 +29,15 @@ width = "720"
 
 blockResources = "false"
 
-forwardHeaders = "true"
+customHeaders = "true"
 
 payload = {}
 
-url = "http://api.scrape.do?token={}&url={}".format(token, targetUrl, super, geoCode, sessionId, timeout, device, customWait, render, blockResources, forwardHeaders, height, width)
+url = "http://api.scrape.do?token={}&url={}".format(token, targetUrl, super, geoCode, sessionId, timeout, device, customWait, render, blockResources, customHeaders, height, width)
 
 headers = {
-  'User-Agent': 'Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.6668.81 Mobile Safari/537.36',
-  'Test-Header-Key': 'TestValue'
+  'sd-User-Agent': 'Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.6668.81 Mobile Safari/537.36',
+  'sd-Test-Header-Key': 'TestValue'
 }
 
 response = requests.request("GET", url, headers=headers, data=payload)
