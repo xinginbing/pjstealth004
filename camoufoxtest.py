@@ -29,13 +29,9 @@ width = "720"
 
 blockResources = "false"
 
-customHeaders = "true"
-
-payload = {}
-
 url = "http://api.scrape.do?token={}&url={}&super={}&geoCode={}&sessionId={}&timeout={}&device={}&customWait={}&render={}&blockResources={}&height={}&width={}".format(token, targetUrl, super, geoCode, sessionId, timeout, device, customWait, render, blockResources, height, width)
 
-response = requests.request("GET", url, headers=headers, data=payload)
+response = requests.request("GET", url)
 
 print(response.text)
 
