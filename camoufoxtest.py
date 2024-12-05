@@ -10,7 +10,7 @@ targetUrl = urllib.parse.quote(link)
 
 #super = "true"
 
-geoCode = "us"
+geoCode = "de"
 
 #regionalGeoCode = "europe"
 #asia 亚洲 europe 欧洲 africa 非洲  oceania 大洋洲 northamerica 北美 southamerica 南美洲  
