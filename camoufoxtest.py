@@ -1,37 +1,36 @@
 import requests
-from pprint import pprint
+import urllib.parse
+import random
 
+token = "54e88bca11504c90b8a184e06c3d89ac7814f7e9a4d"
 
-# Structure payload.
-payload = {
-    "source": "universal", 
-    "url": "https://luglawhaulsano.net/4/8605030", 
-    "user_agent_type": "mobile_android",    
-# desktop_chrome   desktop_chrome   desktop_firefox   desktop_opera  desktop_safari  mobile  mobile_android  mobile_ios  tablet   tablet_android  tablet_ios
-    "geo_location": "United States",
-    "render": "html",
-    "context": [
-        {
-            "key": "follow_redirects",
-            "value": True
-        },
-        {
-            "key": "http_method", "value": "get"
-        }]
-    
-}
+link = "https://httpbin.co/anything"
 
-# Get response.
-response = requests.request(
-    'POST',
-    'https://realtime.oxylabs.io/v1/queries',
-    auth=('lje024_hTJli', 'xiaobai024A002+'),
-    json=payload,
-)
+targetUrl = urllib.parse.quote(link)
 
-# Instead of response with job status and results url, this will return the
-# JSON response with the result.
-pprint(response.json())
+superParam = "true"
+
+geoCode = "us"
+
+#regionalGeoCode = "europe"
+#asia 亚洲 europe 欧洲 africa 非洲  oceania 大洋洲 northamerica 北美 southamerica 南美洲  
+sessionId = str(random.randint(2000, 4000))
+
+timeout = "1200000"   # 5000 毫秒和 120000 毫秒
+
+device = "desktop"   # desktop 和 mobile 
+
+customWait = "35000"
+
+render = "true"
+
+blockResources = "false"
+
+url = "http://api.scrape.do?token={}&url={}".format(token, targetUrl, superParam, geoCode, sessionId, timeout, device, customWait, render, blockResources)
+
+response = requests.request("GET", url)
+
+print(response.text)
 
 
 
