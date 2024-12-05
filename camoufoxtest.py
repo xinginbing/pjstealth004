@@ -8,7 +8,7 @@ link = "https://httpbin.co/anything"
 
 targetUrl = urllib.parse.quote(link)
 
-superParam = "true"
+super = "true"
 
 geoCode = "us"
 
@@ -26,7 +26,7 @@ render = "true"
 
 blockResources = "false"
 
-url = "http://api.scrape.do?token={}&url={}".format(token, targetUrl, superParam, geoCode, sessionId, timeout, device, customWait, render, blockResources)
+url = "http://api.scrape.do?token={}&url={}".format(token, targetUrl, super, geoCode, sessionId, timeout, device, customWait, render, blockResources)
 
 response = requests.request("GET", url)
 
