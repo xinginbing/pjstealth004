@@ -18,7 +18,7 @@ sessionId = str(random.randint(2000, 4000))
 
 timeout = "1200000"   # 5000 毫秒和 120000 毫秒
 
-device = "desktop"   # desktop 和 mobile 
+device = "mobile"   # desktop 和 mobile 
 
 customWait = "35000"
 
