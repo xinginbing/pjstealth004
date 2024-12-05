@@ -18,20 +18,30 @@ sessionId = str(random.randint(2000, 4000))
 
 timeout = "1200000"   # 5000 毫秒和 120000 毫秒
 
-device = "mobile"   # desktop 和 mobile 
+device = "desktop"   # desktop 和 mobile 
 
 customWait = "35000"
 
 render = "true"
 
+height = "1280"
+width = "720"
+
 blockResources = "false"
 
-url = "http://api.scrape.do?token={}&url={}".format(token, targetUrl, super, geoCode, sessionId, timeout, device, customWait, render, blockResources)
+customHeaders = "true"
 
-response = requests.request("GET", url)
+payload = {}
+
+url = "http://api.scrape.do?token={}&url={}".format(token, targetUrl, superParam, geoCode, sessionId, timeout, device, customWait, render, blockResources, customHeaders, height, width)
+
+headers = {
+  'User-Agent': 'Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.6668.81 Mobile Safari/537.36'
+}
+
+response = requests.request("GET", url, headers=headers, data=payload)
 
 print(response.text)
-
 
 
 
