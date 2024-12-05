@@ -4,11 +4,11 @@ import random
 
 token = "54e88bca11504c90b8a184e06c3d89ac7814f7e9a4d"
 
-link = "https://httpbin.co/anything"
+link = "https://luglawhaulsano.net/4/8605030"
 
 targetUrl = urllib.parse.quote(link)
 
-super = "true"
+#super = "true"
 
 geoCode = "us"
 
@@ -29,8 +29,8 @@ width = "720"
 
 blockResources = "false"
 
-url = "http://api.scrape.do?token={}&url={}&super={}&geoCode={}&sessionId={}&timeout={}&device={}&customWait={}&render={}&blockResources={}&height={}&width={}".format(token, targetUrl, super, geoCode, sessionId, timeout, device, customWait, render, blockResources, height, width)
-
+#url = "http://api.scrape.do?token={}&url={}&super={}&geoCode={}&sessionId={}&timeout={}&device={}&customWait={}&render={}&blockResources={}&height={}&width={}".format(token, targetUrl, super, geoCode, sessionId, timeout, device, customWait, render, blockResources, height, width)
+url = "http://api.scrape.do?token={}&url={}&geoCode={}&sessionId={}&timeout={}&device={}&customWait={}&render={}&blockResources={}&height={}&width={}".format(token, targetUrl, geoCode, sessionId, timeout, device, customWait, render, blockResources, height, width)
 response = requests.request("GET", url)
 
 print(response.text)
