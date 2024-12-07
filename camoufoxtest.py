@@ -7,7 +7,9 @@ customHeaders = "true"
 payload = {}
 url = "http://api.scrape.do?token={}&url={}&customHeaders={}".format(token, targetUrl, customHeaders)
 headers = {
-  'Test-Header-Key': 'TestValue'
+  'Test-Header-Key': 'TestValue',
+  "Sec-Ch-Ua-Mobile": "?1",
+  "Sec-Ch-Ua-Platform": "\"android\""
 }
 response = requests.request("GET", url, headers=headers, data=payload)
 print(response.text)
