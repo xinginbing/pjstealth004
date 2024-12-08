@@ -12,10 +12,10 @@ customWait = "35000"
 render = "true"
 height = "720"
 width = "1280"
-
+sessionId = "22145"
 blockResources = "false"
 #url = "http://api.scrape.do?token={}&url={}&customHeaders={}".format(token, targetUrl, customHeaders)
-url = "http://api.scrape.do?token={}&url={}&device={}&super={}&geoCode={}&customWait={}&render={}&height={}&width={}&blockResources={}".format(token, targetUrl, device, super, geoCode, customWait, render, height, width, blockResources)
+url = "http://api.scrape.do?token={}&url={}&device={}&super={}&geoCode={}&customWait={}&render={}&height={}&width={}&blockResources={}&sessionId={}".format(token, targetUrl, device, super, geoCode, customWait, render, height, width, blockResources, sessionId)
 #headers = {
 #  'Test-Header-Key': 'TestValue',
 #  "Sec-Ch-Ua-Mobile": "?1",
