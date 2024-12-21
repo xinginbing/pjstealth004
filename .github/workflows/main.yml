@@ -12,7 +12,9 @@ jobs:
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
-    - name: Install scrapingbee
-      run: pip install requests
+    - name: Install patchright
+      run: pip install patchright
+    - name: Install chromium
+      run: patchright install chromium
     - name: Run your tests
-      run: python camoufoxtest.py
+      run: xvfb-run python camoufoxtest.py
