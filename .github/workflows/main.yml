@@ -1,5 +1,7 @@
 name: camoufox test
-on: [push]
+on: 
+  schedule:
+    - cron: "0 22 * * *"
 jobs:
   test_camoufox:
     runs-on: ubuntu-latest
