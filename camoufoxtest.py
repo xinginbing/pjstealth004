@@ -56,7 +56,7 @@ def naproxy():
                 print(timezone)
                 chooseChrome = random.randint(0, 199)
                 print('第' + str(chooseChrome) + '个 chrome')
-                ua  = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/'+ chromelist[chooseChrome] +' Safari/537.36 Edg'
+                ua  = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/'+ chromelist[chooseChrome] +' Safari/537.36'
 
                 browser = p.chromium.launch_persistent_context(
                 user_data_dir="./nap",
@@ -134,7 +134,7 @@ def lumiproxy():
                 print(timezone)
                 chooseChrome = random.randint(0, 199)
                 print('第' + str(chooseChrome) + '个 chrome')
-                ua  = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/'+ chromelist[chooseChrome] +' Safari/537.36 Edg'
+                ua  = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/'+ chromelist[chooseChrome] +' Safari/537.36'
 
                 browser = p.chromium.launch_persistent_context(
                 user_data_dir="./lumip",
@@ -213,7 +213,7 @@ def proxycc():
                 print(timezone)
                 chooseChrome = random.randint(0, 199)
                 print('第' + str(chooseChrome) + '个 chrome')
-                ua  = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/'+ chromelist[chooseChrome] +' Safari/537.36 Edg'
+                ua  = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/'+ chromelist[chooseChrome] +' Safari/537.36'
 
                 browser = p.chromium.launch_persistent_context(
                 user_data_dir="./pcc",
@@ -296,7 +296,7 @@ def plite():
                 print(timezone)
                 chooseChrome = random.randint(0, 199)
                 print('第' + str(chooseChrome) + '个 chrome')
-                ua  = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/'+ chromelist[chooseChrome] +' Safari/537.36 Edg'
+                ua  = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/'+ chromelist[chooseChrome] +' Safari/537.36'
 
                 browser = p.chromium.launch_persistent_context(
                 user_data_dir="./plite",
@@ -379,7 +379,7 @@ def p911():
                 print(timezone)
                 chooseChrome = random.randint(0, 199)
                 print('第' + str(chooseChrome) + '个 chrome')
-                ua  = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/'+ chromelist[chooseChrome] +' Safari/537.36 Edg'
+                ua  = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/'+ chromelist[chooseChrome] +' Safari/537.36'
 
                 browser = p.chromium.launch_persistent_context(
                 user_data_dir="./p911",
