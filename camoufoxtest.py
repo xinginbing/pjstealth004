@@ -169,7 +169,7 @@ def proxycc():
     global url
     count = 0
 
-    while count < 201:
+    while count < 2:
         try:
             with sync_playwright() as p:
                 if countrylist[count] == 0: #俄罗斯 Russia
@@ -252,7 +252,7 @@ def plite():
     global url
     count = 0
 
-    while count < 201:
+    while count < 2:
         try:
             with sync_playwright() as p:
                 if countrylist[count] == 0: #俄罗斯 Russia
