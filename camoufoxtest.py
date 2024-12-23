@@ -228,7 +228,7 @@ def proxycc():
 
                 page.goto('https://proxy.cc/croxyproxy/', wait_until='domcontentloaded')
                 try:
-                    element = page.wait_for_selector('.close', timeout=5000)
+                    element = page.wait_for_selector('/html/body/div[1]/div/div[5]/div/div[1]/img', timeout=5000)
                     element.click()
                 except:
                     print("have errors")
@@ -311,7 +311,7 @@ def plite():
 
                 page.goto('https://www.proxylite.com/croxyproxy/', wait_until='domcontentloaded')
                 try:
-                    element = page.wait_for_selector('.close', timeout=5000)
+                    element = page.wait_for_selector('/html/body/div[1]/div/div/div[8]/div/div[1]/img', timeout=5000)
                     element.click()
                 except:
                     print("have errors")
@@ -413,20 +413,20 @@ def p911():
     print("stop 911proxy thread!")
     
     
-t1 = threading.Thread(target=naproxy)
-t2 = threading.Thread(target=lumiproxy)
+
+
 t3 = threading.Thread(target=proxycc)
 t4 = threading.Thread(target=plite)
-t5 = threading.Thread(target=p911)
-t1.start()
-t2.start()
+
+
+
 t3.start()
 t4.start()
-t5.start()
-t1.join()
-t2.join()
+
+
+
 t3.join()
 t4.join()
-t5.join()
+
 print ("退出主线程")
     
