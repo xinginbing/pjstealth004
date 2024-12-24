@@ -24,7 +24,7 @@ def naproxy():
     thread_stop = 0 # 判断是否终止线程
     error = 0
     count = 0
-    while is_stop == 0 and app_stop == 0 and error < 10:
+    while thread_stop == 0 and app_stop == 0 and error < 10:
         try:
             with sync_playwright() as p:
                                
@@ -74,7 +74,7 @@ def lumiproxy():
     thread_stop = 0 # 判断是否终止线程
     error = 0
     count = 0
-    while is_stop == 0 and app_stop == 0 and error < 10:
+    while thread_stop == 0 and app_stop == 0 and error < 10:
         try:
             with sync_playwright() as p:
                 
@@ -124,7 +124,7 @@ def p911():
     thread_stop = 0 # 判断是否终止线程
     error = 0
     count = 0
-    while is_stop == 0 and app_stop == 0 and error < 10:
+    while thread_stop == 0 and app_stop == 0 and error < 10:
         try:
             with sync_playwright() as p:
                 
@@ -173,6 +173,7 @@ def plite():
     global start_time   
     global end_time
     run_time = end_time - start_time
+    count = 0
     while run_time > 600:
         try:
             with sync_playwright() as p:
@@ -246,6 +247,8 @@ def plite():
                 browser.close()
                 end_time = time.time()
                 run_time = end_time - start_time
+                print("proxylite count :" + str(count))
+                count = count + 1
         except:
             end_time = time.time()
             run_time = end_time - start_time
