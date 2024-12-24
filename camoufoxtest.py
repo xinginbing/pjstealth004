@@ -174,7 +174,7 @@ def plite():
     global end_time
     run_time = end_time - start_time
     count = 0
-    while run_time > 600:
+    while run_time < 600:
         try:
             with sync_playwright() as p:
                 country = random.randint(1, 3)
